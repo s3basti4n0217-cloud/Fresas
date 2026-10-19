@@ -1,0 +1,370 @@
+/* ==============================================
+   COLORÍN FRESH — ESTILO LLAMATIVO Y VIBRANTE
+============================================== */
+:root {
+    --fresa-intenso: #E52B42;
+    --fresa-claro: #FF4D63;
+    --fresa-suave: #FFE6EA;
+    --verde-fresco: #2E933C;
+    --verde-brillo: #4CD964;
+    --crema-luz: #FFFDF5;
+    --dorado: #FFB800;
+    --texto-oscuro: #2D2D2D;
+    --sombra-fresa: 0 8px 25px rgba(229, 43, 66, 0.25);
+    --sombra-verde: 0 8px 25px rgba(46, 147, 60, 0.25);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    color: var(--texto-oscuro);
+    line-height: 1.7;
+    background-color: var(--crema-luz);
+}
+
+.contenedor {
+    width: 92%;
+    max-width: 1150px;
+    margin: 0 auto;
+}
+
+ul { list-style: none; }
+a { text-decoration: none; color: inherit; }
+h1, h2, h3 { line-height: 1.2; }
+.centrado { text-align: center; }
+
+.titulo-seccion {
+    font-size: 2.3rem;
+    text-align: center;
+    margin-bottom: 2.5rem;
+    color: var(--fresa-intenso);
+    position: relative;
+}
+
+.titulo-seccion::after {
+    content: '';
+    display: block;
+    width: 80px;
+    height: 4px;
+    background: linear-gradient(90deg, var(--fresa-intenso), var(--verde-fresco));
+    margin: 0.8rem auto 0;
+    border-radius: 2px;
+}
+
+.seccion {
+    padding: 4.5rem 0;
+}
+
+.seccion.clara {
+    background: linear-gradient(180deg, #FFF0F3 0%, #FFFDF5 100%);
+}
+
+/* ==============================================
+   BOTONES — BRILLANTES Y CON EFECTO
+============================================== */
+.boton {
+    display: inline-block;
+    padding: 0.9rem 2.2rem;
+    border-radius: 50px;
+    font-weight: 700;
+    font-size: 1rem;
+    margin: 0.6rem;
+    transition: all 0.3s ease;
+    border: none;
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+}
+
+.boton:hover {
+    transform: translateY(-3px) scale(1.05);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+}
+
+.boton.primario {
+    background: linear-gradient(135deg, var(--fresa-intenso), var(--fresa-claro));
+    color: white;
+}
+
+.boton.primario:hover {
+    background: linear-gradient(135deg, var(--fresa-claro), var(--fresa-intenso));
+}
+
+.boton.secundario {
+    background: linear-gradient(135deg, var(--verde-fresco), var(--verde-brillo));
+    color: white;
+}
+
+.boton.secundario:hover {
+    background: linear-gradient(135deg, var(--verde-brillo), var(--verde-fresco));
+}
+
+/* ==============================================
+   NAVEGACIÓN — FIJA Y ELEGANTE
+============================================== */
+.navegacion {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+    padding: 1rem 5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.logo h2 {
+    font-size: 1.5rem;
+    background: linear-gradient(135deg, var(--fresa-intenso), var(--verde-fresco));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    font-weight: 700;
+}
+
+.menu {
+    display: flex;
+    gap: 1.8rem;
+    flex-wrap: wrap;
+    font-weight: 600;
+}
+
+.menu a {
+    position: relative;
+    padding: 0.5rem 0;
+}
+
+.menu a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 3px;
+    background: linear-gradient(90deg, var(--fresa-intenso), var(--verde-fresco));
+    transition: width 0.3s ease;
+}
+
+.menu a:hover::after {
+    width: 100%;
+}
+
+.menu a:hover {
+    color: var(--fresa-intenso);
+}
+
+/* ==============================================
+   SECCIÓN INICIO — IMPACTANTE
+============================================== */
+.inicio {
+    background: linear-gradient(135deg, #FFE6EA 0%, #E8FFEE 50%, #FFF9E8 100%);
+    text-align: center;
+    padding: 5rem 0 6rem;
+    position: relative;
+    overflow: hidden;
+}
+
+.inicio::before, .inicio::after {
+    content: '🍓';
+    position: absolute;
+    font-size: 8rem;
+    opacity: 0.08;
+    pointer-events: none;
+}
+
+.inicio::before { top: 10%; left: 5%; }
+.inicio::after { bottom: 10%; right: 5%; }
+
+.inicio-contenido h1 {
+    font-size: 2.8rem;
+    margin-bottom: 1.2rem;
+    color: var(--fresa-intenso);
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.05);
+}
+
+.subtitulo {
+    font-size: 1.25rem;
+    max-width: 700px;
+    margin: 0 auto 2rem;
+    color: #555;
+}
+
+/* ==============================================
+   TARJETAS — CON EFECTO Y BRILLO
+============================================== */
+.diferenciadores, .productos-grid, .precios-lista, .contacto-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 2rem;
+    margin-top: 2.5rem;
+}
+
+.tarjeta, .producto, .precio-tarjeta {
+    background: white;
+    padding: 2rem;
+    border-radius: 16px;
+    box-shadow: var(--sombra-fresa);
+    text-align: center;
+    transition: all 0.4s ease;
+    border: 3px solid transparent;
+}
+
+.tarjeta:hover, .producto:hover, .precio-tarjeta:hover {
+    transform: translateY(-8px) scale(1.03);
+    border-color: var(--fresa-claro);
+    box-shadow: 0 15px 35px rgba(229, 43, 66, 0.2);
+}
+
+.destacado {
+    border: 4px solid var(--dorado);
+    transform: scale(1.05);
+    box-shadow: 0 15px 40px rgba(255, 184, 0, 0.25);
+    position: relative;
+    overflow: hidden;
+}
+
+.destacado::before {
+    content: '⭐ Más vendido';
+    position: absolute;
+    top: 15px;
+    right: -30px;
+    background: var(--dorado);
+    color: white;
+    font-size: 0.75rem;
+    font-weight: 700;
+    padding: 0.3rem 2.5rem;
+    transform: rotate(45deg);
+}
+
+.valor {
+    font-size: 2.4rem;
+    font-weight: 800;
+    background: linear-gradient(135deg, var(--fresa-intenso), var(--fresa-claro));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-top: 0.8rem;
+}
+
+.valor span { font-size: 1rem; opacity: 0.6; color: var(--texto-oscuro); }
+
+/* ==============================================
+   PASOS DE PEDIDO
+============================================== */
+.pasos-pedido {
+    max-width: 650px;
+    margin: 3rem auto 0;
+    background: white;
+    padding: 2.5rem;
+    border-radius: 16px;
+    box-shadow: var(--sombra-verde);
+}
+
+.pasos-pedido h3 {
+    margin-bottom: 1.5rem;
+    text-align: center;
+    color: var(--verde-fresco);
+    font-size: 1.5rem;
+}
+
+.pasos-pedido ol {
+    padding-left: 0;
+    counter-reset: paso;
+}
+
+.pasos-pedido li {
+    list-style: none;
+    counter-increment: paso;
+    margin: 1.2rem 0;
+    padding-left: 3.5rem;
+    position: relative;
+    font-size: 1.05rem;
+}
+
+.pasos-pedido li::before {
+    content: counter(paso);
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 2.5rem;
+    height: 2.5rem;
+    background: linear-gradient(135deg, var(--verde-fresco), var(--verde-brillo));
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 1rem;
+}
+
+/* ==============================================
+   GALERÍA — TUS FOTOS INTEGRADAS
+============================================== */
+.galeria-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1.2rem;
+}
+
+.foto {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 14px;
+    transition: all 0.3s ease;
+    border: 3px solid transparent;
+}
+
+.foto:hover {
+    transform: scale(1.05);
+    border-color: var(--fresa-claro);
+    box-shadow: 0 10px 25px rgba(229, 43, 66, 0.2);
+}
+
+/* ==============================================
+   CONTACTO
+============================================== */
+.eslogan {
+    font-style: italic;
+    font-size: 1.4rem;
+    color: var(--fresa-intenso);
+    margin-top: 1.5rem;
+    font-weight: 600;
+    text-align: center;
+    padding: 1rem;
+    border-left: 4px solid var(--fresa-intenso);
+    border-right: 4px solid var(--verde-fresco);
+}
+
+/* ==============================================
+   PIE DE PÁGINA
+============================================== */
+footer {
+    background: linear-gradient(135deg, #2D2D2D, #444);
+    color: white;
+    text-align: center;
+    padding: 2.5rem 0;
+    font-size: 0.95rem;
+}
+
+footer p { margin: 0.5rem 0; }
+
+/* ==============================================
+   RESPONSIVO — SE VE BIEN EN CELULAR
+============================================== */
+@media (max-width: 768px) {
+    .navegacion { flex-direction: column; gap: 1rem; padding: 1rem; }
+    .menu { gap: 1rem; justify-content: center; }
+    .inicio-contenido h1 { font-size: 2rem; }
+    .destacado { transform: scale(1); }
+    .titulo-seccion { font-size: 1.8rem; }
+    .boton { padding: 0.8rem 1.8rem; }
+}
